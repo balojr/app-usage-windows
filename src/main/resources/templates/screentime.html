@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Screentime Monitor</title>
+    <style>
+        table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<h1>Screentime Monitor</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Application/Window</th>
+        <th>Screentime (HH:MM:SS)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${screentime}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
